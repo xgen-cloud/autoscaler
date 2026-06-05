@@ -110,6 +110,7 @@ func (p *MixedTemplateNodeInfoProvider) Process(autoscalingCtx *ca_context.Autos
 			if caErr != nil {
 				return false, "", caErr
 			}
+			klog.V(1).Infof("RAMAPRINT template node info labels: %+v", templateNodeInfo.Node().Labels)
 			result[id] = templateNodeInfo
 			return true, id, nil
 		}
